@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
-import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
 import useClippy from 'use-clippy'
-import { handleCopy, handleSelect, handlePaste } from '../utils'
+import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
 import { Alert } from '../components'
-import { Close, Mic } from '../assets'
+import { handleCopy, handleSelect, handlePaste } from '../utils'
+import { Mic, Close } from '../assets'
 
 
 

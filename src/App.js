@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import './App.css';
 // import { Article, Voice } from 'components';
-import Article from './components/Article';
-import Voice from './components/Voice';
+// import Voice from './components/Voice';
+// import Article from './components/Article';
+import { Article, Voice } from './components';
 
 
 const App = () => {
