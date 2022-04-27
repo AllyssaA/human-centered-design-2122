@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "speech-copy-paste",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,6 +10,7 @@
     "react-dom": "^18.1.0",
     "react-scripts": "5.0.1",
     "react-speech-recognition": "^3.9.0",
+    "use-clippy": "^1.0.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
