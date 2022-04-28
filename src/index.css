@@ -5,9 +5,37 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 2em 10em 10em 2em;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+img{
+  width: 10vw;
+}
+
+button{
+  border: none;
+  background-color: #ffff;
+}
+
+button:hover{
+  cursor: pointer;
+  background-color: #3cb0fd;
+  border-radius: 50%;
+  
+}
+
+textarea{
+  width: 30vw;
+  height: 30vh;
+}
+
+div.instructies{
+  border: .2em solid rgb(86, 84, 84);
+  background-color: rgb(213, 213, 213);
+  padding: .2em 1em;
 }

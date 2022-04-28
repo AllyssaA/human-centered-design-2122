@@ -76,10 +76,16 @@ useEffect(() => {
     return (
         <div>
             {alert && <Alert message={alert} />}
-            <textarea disabled value={paste} />
+            <textarea disabled value={paste} placeholder='hier kan je tekst plakken'/>
             <button className='voice-button' onClick={handleMic}>
           <img className='mic-icon' src={listening ? Close : Mic} alt='Icon van een microfoon' />
-        </button>
+            </button>
+            <div className='instructies'>
+                <h2>Instructies</h2>
+                <p>Selecteer: zeg "selecteer (begin woorden) tot (eind woorden)"</p>
+                <p>Kopieeren: zeg "kopieer"</p>
+                <p>Plakken: zeg "plakken"</p>
+            </div>
         </div>
 
     )
