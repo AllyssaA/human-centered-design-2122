@@ -19,9 +19,12 @@ textarea{
 }
 
 div.instructies{
+  width:35vw;
+  height: 20vh;
   border: .2em solid rgb(86, 84, 84);
   background-color: rgb(213, 213, 213);
   padding: .2em 1em;
+  margin: 0 2em 2em 0;
 }
 
 .articles {
@@ -54,5 +57,5 @@ div.instructies{
 mark {
   font-weight: bold;
   font-size: 20px;
-  
+
 }
