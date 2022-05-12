@@ -1,5 +1,5 @@
 img{
-  width: 10vw;
+  width: 5vw;
 }
 
 button{
@@ -7,18 +7,18 @@ button{
   background-color: #ffff;
 }
 
-button:hover{
+.voice-button:hover{
   cursor: pointer;
-  background-color: #3cb0fd;
+  background-color: #62a0c9;
   border-radius: 50%;
 }
 
 textarea{
-  width: 30vw;
-  height: 30vh;
+  width: 40vw;
+  height: 20vh;
 }
 
-div.instructions{
+div.instructies{
   border: .2em solid rgb(86, 84, 84);
   background-color: rgb(213, 213, 213);
   padding: .2em 1em;
@@ -31,7 +31,7 @@ div.instructions{
 
 .article {
   margin-bottom: 4em;
-  border: 1px solid rgb(86, 84, 84);
+  border: 1px solid #62a0c9;
   padding: 1em 2.5em;
   border-radius: 3px;
 }
