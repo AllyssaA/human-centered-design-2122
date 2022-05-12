@@ -2,9 +2,8 @@ import { useEffect, useState } from 'react'
 import useClippy from 'use-clippy'
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
 import { Alert } from '../components'
-import { handleCopy, handleSelect, handlePaste } from '../utils'
-import { Mic, Close } from '../assets'
-
+import { handleCopy, handleSelect, handlePaste, selectCopy } from '../utils'
+import { Mic, dnd } from '../assets'
 
 
 const Voice = ({articles, setFormattedArticles}) => {
@@ -41,7 +40,17 @@ const commands = [
         isFuzzyMatch: true,
         fuzzyMatchingThreshold: 0.2,
         bestMatchOnly: true
-    }
+    },
+    {
+        command: 'kopieer *',
+        callback: () => {
+        selectCopy(selected, setClipboard)
+            setCommand('kopieer')
+      },
+      isFuzzyMatch: true,
+      fuzzyMatchingThreshold: 0.2,
+      bestMatchOnly: true
+    },
 ]
 
 const { transcript, listening } = useSpeechRecognition({ commands })
@@ -74,7 +83,10 @@ useEffect(() => {
     if(!SpeechRecognition.browserSupportsSpeechRecognition()) return null
 
     return (
-        <div>
+        <div className='container'>
+             <button className='voice-button' onClick={handleMic}>
+              <img className='mic-icon' src={listening ? dnd : Mic} alt='Icon van een microfoon' />
+            </button>
             <div className='utils'>
             {alert && <Alert message={alert} />}
                 <p>{transcript ? transcript : 'Transcriptie komt hier.'}</p>
@@ -86,9 +98,6 @@ useEffect(() => {
                 </div>
                 <textarea disabled value={paste} placeholder='hier kan je tekst plakken'/>
             </div>
-            <button className='voice-button' onClick={handleMic}>
-              <img className='mic-icon' src={listening ? Close : Mic} alt='Icon van een microfoon' />
-            </button>
         </div>
 
     )
