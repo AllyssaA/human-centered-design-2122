@@ -51,3 +51,8 @@ div.instructies{
   grid-template-columns: 1fr 1fr;
 }
 
+mark {
+  font-weight: bold;
+  font-size: 20px;
+  
+}
