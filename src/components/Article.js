@@ -1,4 +1,4 @@
-const Article = ({ title, text }) => {
+const Article = ({ title, text}) => {
     const createMarkup = (html) => ({ __html: html })
     
     return (

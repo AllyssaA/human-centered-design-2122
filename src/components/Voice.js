@@ -7,7 +7,7 @@ import { Mic, Close } from '../assets'
 
 
 
-const Voice = ({ articles, setFormattedArticles }) => {
+const Voice = ({articles, setFormattedArticles}) => {
     const [command, setCommand] = useState()
     const [paste, setPaste] = useState()
     const [clipboard, setClipboard] = useClippy()
@@ -20,10 +20,10 @@ const commands = [
         callback: () => {
             handleCopy(selected, setClipboard)
             setCommand('kopieer')
-        },
-        isFuzzyMatch: true,
-        fuzzyMatchingThreshold: 0.2,
-        bestMatchOnly: true
+      },
+      isFuzzyMatch: true,
+      fuzzyMatchingThreshold: 0.2,
+      bestMatchOnly: true
     },
     {
         command: 'selecteer * tot *',
@@ -44,7 +44,7 @@ const commands = [
     }
 ]
 
-const { listening } = useSpeechRecognition({ commands })
+const { transcript, listening } = useSpeechRecognition({ commands })
 
 useEffect(() => {
     setAlert()
@@ -58,7 +58,7 @@ useEffect(() => {
         return
     }
     if (command === 'plakken') {
-        setAlert('Teskt is geplakt.')
+        setAlert('Tekst is geplakt.')
     }
 }, [command, selected])
 
@@ -75,17 +75,20 @@ useEffect(() => {
 
     return (
         <div>
+            <div className='utils'>
             {alert && <Alert message={alert} />}
-            <textarea disabled value={paste} placeholder='hier kan je tekst plakken'/>
-            <button className='voice-button' onClick={handleMic}>
-          <img className='mic-icon' src={listening ? Close : Mic} alt='Icon van een microfoon' />
-            </button>
-            <div className='instructies'>
-                <h2>Instructies</h2>
-                <p>Selecteer: zeg "selecteer (begin woorden) tot (eind woorden)"</p>
-                <p>Kopieeren: zeg "kopieer"</p>
-                <p>Plakken: zeg "plakken"</p>
+                <p>{transcript ? transcript : 'Transcriptie komt hier.'}</p>
+                <div className='instructies'>
+                    <h2>Instructies</h2>
+                    <p>Selecteer: zeg "selecteer (begin woorden) tot (eind woorden)"</p>
+                    <p>Kopieeren: zeg "kopieer"</p>
+                    <p>Plakken: zeg "plakken"</p>
+                </div>
+                <textarea disabled value={paste} placeholder='hier kan je tekst plakken'/>
             </div>
+            <button className='voice-button' onClick={handleMic}>
+              <img className='mic-icon' src={listening ? Close : Mic} alt='Icon van een microfoon' />
+            </button>
         </div>
 
     )
