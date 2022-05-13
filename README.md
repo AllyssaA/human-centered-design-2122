@@ -1,6 +1,12 @@
 # Human Centered Design @cmda-minor-web 2021 - 2022
+<br>
 
-[Click to read my progress on my wiki](https://github.com/AllyssaA/human-centered-design-2122/wiki)
+[Click to read my weekly progress!](https://github.com/AllyssaA/human-centered-design-2122/wiki)
+
+<br>
+
+<br>
+
 
 
 Human Centered Design is een  methode voor het ontwerpen van gebruiksvriendelijke interactieve toepassingen.
